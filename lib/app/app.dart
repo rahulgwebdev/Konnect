@@ -37,6 +37,7 @@ class _AppState extends State<App> {
         ),
         textTheme: base.textTheme.apply(
           bodyColor: AppColors.onPrimaryColor,
+          fontFamily: 'Lato',
         ),
         scaffoldBackgroundColor: AppColors.backgroundColor,
         appBarTheme: base.appBarTheme

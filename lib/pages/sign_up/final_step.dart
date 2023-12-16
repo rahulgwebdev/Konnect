@@ -20,7 +20,7 @@ class _FinalStepState extends State<FinalStep> {
       appBar: AppBar(
         surfaceTintColor: AppColors.primaryColor.withOpacity(0.1),
         shape: Border(
-          bottom: BorderSide(color: Color(0xFFCECECE), width: 0.5),
+          bottom: BorderSide(color: AppColors.grayColor, width: 0.5),
         ),
         leading: IconButton(
           icon: AppIcon(appIcon: AppIcons.backArrow, width: 24, height: 24),
@@ -92,7 +92,7 @@ class _FinalStepState extends State<FinalStep> {
                                     shape: RoundedRectangleBorder(
                                       side: BorderSide(
                                           width: 0.50,
-                                          color: Color(0xFF4A4A4A)),
+                                          color: AppColors.greyColorShade2),
                                       borderRadius: BorderRadius.circular(5),
                                     ),
                                   ),
@@ -157,7 +157,7 @@ class _FinalStepState extends State<FinalStep> {
                                     shape: RoundedRectangleBorder(
                                       side: BorderSide(
                                           width: 0.50,
-                                          color: Color(0xFF4A4A4A)),
+                                          color: AppColors.greyColorShade2),
                                       borderRadius: BorderRadius.circular(5),
                                     ),
                                   ),

@@ -2,8 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:konnect/app/colors/colors.dart';
 import 'package:konnect/app/route/app_router.gr.dart';
-
-import '../../app/widgets/app_icons.dart';
+import 'package:konnect/app/widgets/widgets.dart';
 
 @RoutePage()
 class DashboardRoute extends StatelessWidget {
@@ -23,7 +22,7 @@ class DashboardRoute extends StatelessWidget {
         appBar: AppBar(
           surfaceTintColor: AppColors.primaryColor.withOpacity(0.1),
           shape: Border(
-            bottom: BorderSide(color: Color(0xFFCECECE), width: 0.5),
+            bottom: BorderSide(color: AppColors.grayColor, width: 0.5),
           ),
           automaticallyImplyLeading: false,
           title: Text(
@@ -54,39 +53,47 @@ class DashboardRoute extends StatelessWidget {
           ],
         ),
         body: SafeArea(child: child),
-        bottomNavigationBar: BottomNavigationBar(
-          type: BottomNavigationBarType.fixed,
-          showSelectedLabels: false,
-          showUnselectedLabels: false,
-          currentIndex: AutoTabsRouter.of(context).activeIndex,
-          onTap: (value) {
-            AutoTabsRouter.of(context).setActiveIndex(value);
-          },
-          items: const [
-            BottomNavigationBarItem(
-              icon: AppIcon(appIcon: AppIcons.homeDark, width: 30, height: 30),
-              label: 'Home',
-            ),
-            BottomNavigationBarItem(
-              icon: AppIcon(
-                  appIcon: AppIcons.discussionForumDark, width: 30, height: 30),
-              label: 'Discussion forum ',
-            ),
-            BottomNavigationBarItem(
-              icon:
-                  AppIcon(appIcon: AppIcons.customsDark, width: 30, height: 30),
-              label: 'Customs',
-            ),
-            BottomNavigationBarItem(
-              icon: AppIcon(appIcon: AppIcons.gstDark, width: 30, height: 30),
-              label: 'Gst',
-            ),
-            BottomNavigationBarItem(
-              icon:
-                  AppIcon(appIcon: AppIcons.profileDark, width: 30, height: 30),
-              label: 'Profile',
-            ),
-          ],
+        bottomNavigationBar: Container(
+          decoration: BoxDecoration(
+              border: Border(
+                  top: BorderSide(color: AppColors.grayColor, width: 0.5))),
+          child: BottomNavigationBar(
+            type: BottomNavigationBarType.fixed,
+            showSelectedLabels: false,
+            showUnselectedLabels: false,
+            currentIndex: AutoTabsRouter.of(context).activeIndex,
+            onTap: (value) {
+              AutoTabsRouter.of(context).setActiveIndex(value);
+            },
+            items: const [
+              BottomNavigationBarItem(
+                icon:
+                    AppIcon(appIcon: AppIcons.homeDark, width: 30, height: 30),
+                label: 'Home',
+              ),
+              BottomNavigationBarItem(
+                icon: AppIcon(
+                    appIcon: AppIcons.discussionForumDark,
+                    width: 30,
+                    height: 30),
+                label: 'Discussion forum ',
+              ),
+              BottomNavigationBarItem(
+                icon: AppIcon(
+                    appIcon: AppIcons.customsDark, width: 30, height: 30),
+                label: 'Customs',
+              ),
+              BottomNavigationBarItem(
+                icon: AppIcon(appIcon: AppIcons.gstDark, width: 30, height: 30),
+                label: 'Gst',
+              ),
+              BottomNavigationBarItem(
+                icon: AppIcon(
+                    appIcon: AppIcons.profileDark, width: 30, height: 30),
+                label: 'Profile',
+              ),
+            ],
+          ),
         ),
       ),
     );

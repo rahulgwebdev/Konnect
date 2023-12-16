@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../app/widgets/app_icons.dart';
+import 'app_icons.dart';
 
 class Tile extends StatelessWidget {
   final AppIcon _appIcon;

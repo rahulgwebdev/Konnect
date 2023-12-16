@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:konnect/app/widgets/app_icons.dart';
-import 'package:konnect/widgets/tile.dart';
+import 'package:konnect/app/widgets/tile.dart';
 
 @RoutePage()
 class HomePage extends StatelessWidget {
@@ -49,7 +49,7 @@ class HomePage extends StatelessWidget {
                             fontFamily: 'Lato',
                             fontSize: 14,
                             fontWeight: FontWeight.w400,
-                            height: 2),
+                            height: 1.7),
                         children: [
                           TextSpan(text: 'Feel free to share your '),
                           TextSpan(
