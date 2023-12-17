@@ -14,6 +14,7 @@ class IconPaths {
   static final gstDark = 'assets/images/icons/gst_dark.png';
   static final profileDark = 'assets/images/icons/profile_dark.png';
   static final customsDark = 'assets/images/icons/customs_dark.png';
+  static final checkedDark = 'assets/images/icons/checked_dark.png';
 
   IconPaths._() {}
 }

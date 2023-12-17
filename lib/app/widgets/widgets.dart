@@ -2,3 +2,4 @@
 
 export './app_icons.dart';
 export './tile.dart';
+export './body_text.dart';

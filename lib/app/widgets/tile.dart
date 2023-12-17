@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:konnect/app/colors/colors.dart';
+import 'package:konnect/app/utils/utils.dart';
 
 import 'app_icons.dart';
 
@@ -17,8 +19,10 @@ class Tile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final widthScaleFactor = getDeviceWidthScaleFactor(context);
+    final heightScaleFactor = getDeviceHeightScaleFactor(context);
     return Padding(
-      padding: const EdgeInsets.only(bottom: 20),
+      padding: EdgeInsets.only(bottom: 15 * heightScaleFactor),
       child: Semantics(
         button: true,
         child: Container(
@@ -35,12 +39,14 @@ class Tile extends StatelessWidget {
               )
             ],
           ),
-          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+          padding: EdgeInsets.symmetric(
+              horizontal: 15 * widthScaleFactor,
+              vertical: 20 * heightScaleFactor),
           child: Row(
             children: [
               Container(
-                width: 60,
-                height: 60,
+                width: 60 * widthScaleFactor,
+                height: 60 * widthScaleFactor,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(500),
                   color: Colors.white,
@@ -49,25 +55,25 @@ class Tile extends StatelessWidget {
                   child: _appIcon,
                 ),
               ),
-              SizedBox(width: 15),
+              SizedBox(width: 15 * widthScaleFactor),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     _heading,
                     style: TextStyle(
-                      color: Color(0xFF161616),
-                      fontSize: 17,
-                      fontFamily: 'Lato',
-                      fontWeight: FontWeight.w600,
-                    ),
+                        color: AppColors.onPrimaryColor,
+                        fontSize: 17 * widthScaleFactor,
+                        fontFamily: 'Lato',
+                        fontWeight: FontWeight.w600,
+                        height: 0),
                   ),
-                  SizedBox(height: 13),
+                  SizedBox(height: (13 - 5) * widthScaleFactor),
                   Text(
                     _subHeading,
                     style: TextStyle(
-                      color: Color(0xFF161616),
-                      fontSize: 13,
+                      color: AppColors.onPrimaryColor,
+                      fontSize: 13 * widthScaleFactor,
                       fontFamily: 'Lato',
                       fontWeight: FontWeight.w400,
                       height: 0,

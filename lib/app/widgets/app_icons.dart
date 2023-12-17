@@ -13,16 +13,23 @@ enum AppIcons {
   gstDark,
   profileDark,
   customsDark,
+  checkedDark,
 }
 
 class AppIcon extends StatelessWidget {
   final AppIcons _appIcon;
   final double? _width;
   final double? _height;
+  final BoxFit? _boxFit;
 
   const AppIcon(
-      {super.key, required AppIcons appIcon, double? width, double? height})
+      {super.key,
+      required AppIcons appIcon,
+      double? width,
+      double? height,
+      BoxFit? boxFit})
       : _appIcon = appIcon,
+        _boxFit = boxFit,
         _width = width,
         _height = height;
 
@@ -32,6 +39,7 @@ class AppIcon extends StatelessWidget {
       _getImagePath(),
       width: this._width,
       height: this._height,
+      fit: this._boxFit,
     );
   }
 
@@ -59,6 +67,8 @@ class AppIcon extends StatelessWidget {
         return IconPaths.discussionForumDark;
       case AppIcons.customsDark:
         return IconPaths.customsDark;
+      case AppIcons.checkedDark:
+        return IconPaths.checkedDark;
       default:
         return IconPaths.iconNotFound;
     }
